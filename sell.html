@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+
+{% block main %}
+
+<p>Welcome to your stock trading application {{user}}</p>
+
+    <form action = "/sell" method = "POST">
+            <label>Chose the stock to sell</label>
+            <select name = "symbol">
+                {% for row in symbol_list %}
+                    <option value = {{row["symbol"]}}>{{row["symbol"]}}</option>
+                {% endfor %}
+            </select>
+            <br>
+        <input class="form-control" type = "text" name = "shares" placeholder = "shares">
+        <br>
+        <input class="btn btn-primary" type = "submit" value = "Sell">
+    </form>
+{% endblock %}
+

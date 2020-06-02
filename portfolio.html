@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+<p>Welcome to your stock trading application {{user}}</p>
+
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+        <br>
+        {% for row in row %}
+        <tr>
+            <td>{{row["symbol"]}}</td>
+            <td>{{row["company_name"]}}</td>
+            <td>{{row["SUM(share_quantity)"]}}</td>
+            <td>{{row["current_price"]}}</td>
+            <td>{{row["total"]}}</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{cash}}</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{total}}</td>
+        </tr>
+    </table>
+
+
+{% endblock %}

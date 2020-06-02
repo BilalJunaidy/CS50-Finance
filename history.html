@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<p>Welcome to your stock trading application {{user}}</p>
+
+    <table>
+        <tr>
+            <td>Symbol</td>
+            <td>Shares</td>
+            <td>Price</td>
+            <td>Transacted</td>
+        </tr>
+        {% for row in history %}
+            <tr>
+                <td>{{row["symbol"]}}</td>
+                <td>{{row["share_quantity"]}}</td>
+                <td>{{row["share_price"]}}</td>
+                <td>{{row["timestamp"]}}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
